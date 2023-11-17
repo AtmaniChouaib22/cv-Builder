@@ -1,4 +1,5 @@
 function DispalyPersonal({fullname, email, phone, location}) {
+
     return (
         <div className="Display-personal">
             <div>{fullname}</div>

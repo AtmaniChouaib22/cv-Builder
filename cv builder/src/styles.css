@@ -1,5 +1,26 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+}
+#root {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.Resume {
+    width:  600px;
+    height:  700px;
+    background-color: antiquewhite;
+    box-shadow: rgba(50, 50, 93, 0.1) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.25) 0px 8px 16px -8px;
+    margin: 40px;
+}
+.Display-personal {
+    background-color: aquamarine;
+}
+.Display-contact {
+
 }
 .Personal-wrapper {
     cursor: pointer;
