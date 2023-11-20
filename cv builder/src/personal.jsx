@@ -1,28 +1,19 @@
-import { useState } from "react";
+
 import CreateInput from "./inputField";
 import './styles.css'
 
 
-function CreatePersonal({showBox}) {
-    const [personalInfo, SetPersonalInfo]= useState({
-        fullName: "",
-        email: "",
-        phone: "",
-        location: ""
-    });
-
-    const handlePersonalChange = (e) => {
-        console.log(e.target.value, e.target.id);
-       const val = e.target.value ;
-       const id = e.target.id; 
-       SetPersonalInfo((prevInfo)=>({...prevInfo, [id]: val}))
-    }
+function CreatePersonal({showBox, personalInfo, handlePersonalChange, handleSub}) {
 
     return (
         <>
             <h1 onClick={showBox}>click me</h1>
-            <form className="Personal-input">
+            <form className="Personal-input" id="personalForm" onSubmit={handleSub}>
                 <CreateInput id="fullName" type="text" placeholder="Ryan Gosling" label="Full Name" value={personalInfo.fullName} onChange={handlePersonalChange} />
+                <CreateInput id="email" type="email" placeholder="Ryangosling@email.com" label="Email Adresse" value={personalInfo.email} onChange={handlePersonalChange} />
+                <CreateInput id="location" type="text" placeholder="London, Uk" label="Location" value={personalInfo.location} onChange={handlePersonalChange} />
+                <CreateInput id="phone" type="tel" placeholder="+213 7 99 12" label="Phone Number" value={personalInfo.phone} onChange={handlePersonalChange} />
+               <button type="submit">Save</button>
             </form>
         </>
     )
