@@ -1,7 +1,6 @@
 
 import CreateInput from "./inputField";
-import './styles.css'
-
+import './styles/personal.css'
 
 function CreatePersonal({showBox, personalInfo, handlePersonalChange, handleSub}) {
 
