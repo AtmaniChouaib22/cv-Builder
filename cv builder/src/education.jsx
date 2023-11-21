@@ -1,7 +1,7 @@
 import CreateInput from "./inputField";
 import './styles/education.css' ;
 
-function CreateEducation({showEduBox, educationInfo, handleEducationChange, handleEduSub}) {
+function CreateEducation({showEduBox, educationInfo, handleEducationChange, handleEduSub, handleClearEducation}) {
     return (
         <>
             <h1 onClick={showEduBox}>Education</h1>
@@ -12,6 +12,7 @@ function CreateEducation({showEduBox, educationInfo, handleEducationChange, hand
                 <CreateInput id="endDate" type="text" placeholder="" label="End Date" value={educationInfo.endDate} onChange={handleEducationChange} />
                 <CreateInput id="location" type="text" placeholder="uni location" label="Location" value={educationInfo.location} onChange={handleEducationChange} />
                <button type="submit">Save</button>
+               <button type="submit" onClick={handleClearEducation}>Clear</button>
             </form>
         </>
     )

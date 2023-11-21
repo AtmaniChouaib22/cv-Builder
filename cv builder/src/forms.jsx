@@ -36,8 +36,7 @@ function CreateForms() {
         degree: "",
         startDate: "",
         endDate: "",
-        location: "",
-        disc: ""
+        location: ""
     });
 
     const handleEducationChange = (e) => {
@@ -59,12 +58,31 @@ function CreateForms() {
         e.preventDefault();
         SetEduSubmitted(true) ;
     }
+    //clearing forms 
+    const handleClearPersonal = () =>{
+        SetPersonalInfo({
+            fullName: "",
+            email: "",
+            phone: "",
+            location: ""
+        })
+    };
+
+    const handleClearEducation = () =>{
+        SetEducationInfo({
+            school: "",
+            degree: "",
+            startDate: "",
+            endDate: "",
+            location: ""
+        })
+    };
 
     return (
         <>
             <div className="Forms">
-            <CreatePersonal showBox={showBox} handlePersonalChange={handlePersonalChange} personalInfo={personalInfo} handleSub=    {handleSub}/>
-            <CreateEducation showEduBox={showEduBox} handleEducationChange={handleEducationChange} educationInfo={educationInfo} handleEduSub={handleEduSub}/>
+            <CreatePersonal showBox={showBox} handlePersonalChange={handlePersonalChange} personalInfo={personalInfo} handleSub={handleSub} handleClearPersonal={handleClearPersonal}/>
+            <CreateEducation showEduBox={showEduBox} handleEducationChange={handleEducationChange} educationInfo={educationInfo} handleEduSub={handleEduSub} handleClearEducation={handleClearEducation}/>
             </div>
             <CreateResume submitted={submitted} eduSubmitted={eduSubmitted}
             personalInfo={personalInfo} educationInfo={educationInfo}/>
