@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreatePersonal from "./personal";
 import CreateEducation from "./education";
+import CreateExperience from "./experience";
 import CreateResume from "./resume";
 
 function CreateForms() {
@@ -13,6 +14,12 @@ function CreateForms() {
 
     const showEduBox = () => {
         const btn = document.querySelector(".Education-input");
+        console.log(btn);
+        btn.classList.toggle("open"); 
+    }
+
+    const showExpBox = () => {
+        const btn = document.querySelector(".Experience-input");
         console.log(btn);
         btn.classList.toggle("open"); 
     }
@@ -46,6 +53,22 @@ function CreateForms() {
        SetEducationInfo((prevInfo)=>({...prevInfo, [id]: val}))
     }
 
+    const [experienceInfo, SetExperienceInfo]= useState({
+        company: "",
+        title: "",
+        startDate: "",
+        endDate: "",
+        location: "",
+        disc: ""
+    });
+
+    const handleExperienceChange = (e) => {
+       //console.log(e.target.value, e.target.id);
+       const val = e.target.value ;
+       const id = e.target.id; 
+       SetExperienceInfo((prevInfo)=>({...prevInfo, [id]: val}))
+    }
+
     //display informations on submit
     const [submitted, SetSubmitted] = useState(false);
     const handleSub= (e) => {
@@ -58,6 +81,13 @@ function CreateForms() {
         e.preventDefault();
         SetEduSubmitted(true) ;
     }
+
+    const [expSubmitted, SetExpSubmitted] = useState(false);
+    const handleExpSub= (e) => {
+        e.preventDefault();
+        SetExpSubmitted(true) ;
+    }
+
     //clearing forms 
     const handleClearPersonal = () =>{
         SetPersonalInfo({
@@ -78,14 +108,26 @@ function CreateForms() {
         })
     };
 
+    const handleClearExperience = () =>{
+        SetEducationInfo({
+            company: "",
+            title: "",
+            startDate: "",
+            endDate: "",
+            location: "",
+            disc: ""
+        })
+    };
+
     return (
         <>
             <div className="Forms">
             <CreatePersonal showBox={showBox} handlePersonalChange={handlePersonalChange} personalInfo={personalInfo} handleSub={handleSub} handleClearPersonal={handleClearPersonal}/>
             <CreateEducation showEduBox={showEduBox} handleEducationChange={handleEducationChange} educationInfo={educationInfo} handleEduSub={handleEduSub} handleClearEducation={handleClearEducation}/>
+            <CreateExperience showExpBox={showExpBox} handleExperienceChange={handleExperienceChange} experienceInfo={experienceInfo} handleExpSub={handleExpSub} handleClearExperience={handleClearExperience} />
             </div>
-            <CreateResume submitted={submitted} eduSubmitted={eduSubmitted}
-            personalInfo={personalInfo} educationInfo={educationInfo}/>
+            <CreateResume submitted={submitted} eduSubmitted={eduSubmitted} expSubmitted={expSubmitted}
+            personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>
         </>
     )
 }
