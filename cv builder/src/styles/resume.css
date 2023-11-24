@@ -1,0 +1,13 @@
+.Resume {
+    background-color: red;
+    width: 600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 2px 5px 7px 5px rgba(0, 0, 0, 0.1);
+}
+.Resume-items {
+    
+}
