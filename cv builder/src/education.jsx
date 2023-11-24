@@ -4,7 +4,7 @@ import './styles/education.css' ;
 function CreateEducation({showEduBox, educationInfo, handleEducationChange, handleEduSub, handleClearEducation}) {
     return (
         <>
-            <h1 onClick={showEduBox}>Education</h1>
+            <h1 onClick={showEduBox} className="Header-button">Education</h1>
             <form className="Education-input" id="educationForm" onSubmit={handleEduSub}>
                 <CreateInput id="school" type="text" placeholder="school / university" label="School" value={educationInfo.school} onChange={handleEducationChange} />
                 <CreateInput id="degree" type="text" placeholder="licence/masters in" label="Degree" value={educationInfo.degree} onChange={handleEducationChange} />

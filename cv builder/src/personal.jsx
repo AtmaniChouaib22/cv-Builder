@@ -6,7 +6,7 @@ function CreatePersonal({showBox, personalInfo, handlePersonalChange, handleSub,
 
     return (
         <>
-            <h1 onClick={showBox}>Personal Informations</h1>
+            <h1 onClick={showBox} className="Header-button">Personal Informations</h1>
             <form className="Personal-input" id="personalForm" onSubmit={handleSub}>
                 <CreateInput id="fullName" type="text" placeholder="Ryan Gosling" label="Full Name" value={personalInfo.fullName} onChange={handlePersonalChange} />
                 <CreateInput id="email" type="email" placeholder="Ryangosling@email.com" label="Email Adresse" value={personalInfo.email} onChange={handlePersonalChange} />

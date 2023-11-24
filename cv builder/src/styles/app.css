@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+#root {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    justify-items: center;
+    align-items: center;
+}
