@@ -11,8 +11,8 @@ function CreateExperience({showExpBox, experienceInfo, handleExperienceChange, h
                 <CreateInput id="endDate" type="text" placeholder="" label="End Date" value={experienceInfo.endDate} onChange={handleExperienceChange} />
                 <CreateInput id="location" type="text" placeholder="Location" label="Location" value={experienceInfo.location} onChange={handleExperienceChange} />
                 <CreateInput id="disc" type="text" placeholder="Discription" label="Discription" value={experienceInfo.disc} onChange={handleExperienceChange} />
-               <button type="submit">Save</button>
-               <button type="submit" onClick={handleClearExperience}>Clear</button>
+               <button type="submit" className="Save-btn">Save</button>
+               <button type="submit" onClick={handleClearExperience} className="Clear-btn">Clear</button>
             </form>
         </>
     )

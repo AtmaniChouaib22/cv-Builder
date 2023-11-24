@@ -11,8 +11,8 @@ function CreateEducation({showEduBox, educationInfo, handleEducationChange, hand
                 <CreateInput id="startDate" type="text" placeholder="" label="Start Date" value={educationInfo.startDate} onChange={handleEducationChange} />
                 <CreateInput id="endDate" type="text" placeholder="" label="End Date" value={educationInfo.endDate} onChange={handleEducationChange} />
                 <CreateInput id="location" type="text" placeholder="uni location" label="Location" value={educationInfo.location} onChange={handleEducationChange} />
-               <button type="submit">Save</button>
-               <button type="submit" onClick={handleClearEducation}>Clear</button>
+               <button type="submit" className="Save-btn">Save</button>
+               <button type="submit" onClick={handleClearEducation} className="Clear-btn">Clear</button>
             </form>
         </>
     )
