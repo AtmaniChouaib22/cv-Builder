@@ -6,4 +6,5 @@
 }
 .open {
     display: block;
+    flex-direction: column;
 }

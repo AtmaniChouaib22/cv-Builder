@@ -1,5 +1,6 @@
 import CreateInput from "./inputField";
 import './styles/education.css' ;
+import { SaveIcon, DeleteIcon } from "./assets/icons";
 
 function CreateEducation({showEduBox, educationInfo, handleEducationChange, handleEduSub, handleClearEducation}) {
     return (
@@ -11,8 +12,10 @@ function CreateEducation({showEduBox, educationInfo, handleEducationChange, hand
                 <CreateInput id="startDate" type="text" placeholder="" label="Start Date" value={educationInfo.startDate} onChange={handleEducationChange} />
                 <CreateInput id="endDate" type="text" placeholder="" label="End Date" value={educationInfo.endDate} onChange={handleEducationChange} />
                 <CreateInput id="location" type="text" placeholder="uni location" label="Location" value={educationInfo.location} onChange={handleEducationChange} />
-               <button type="submit" className="Save-btn">Save</button>
-               <button type="submit" onClick={handleClearEducation} className="Clear-btn">Clear</button>
+                <div className="Buttons">
+                <button type="submit" className="Save-btn"><SaveIcon stroke="#fff" width="20" height="20"/>Save</button>
+               <button type="submit" onClick={handleClearEducation} className="Clear-btn"><DeleteIcon stroke="#fff" width="20" height="20"/>Clear</button>
+                </div>
             </form>
         </>
     )

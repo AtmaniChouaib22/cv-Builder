@@ -8,6 +8,7 @@
 }
 .open {
     display: flex;
+    flex-direction: column;
 }
 .Input-field {
     display: flex;
@@ -49,8 +50,15 @@
     background-color: #1e293b;
     color: #fff;
 }
+.Buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
 .Clear-btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
     padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
@@ -63,7 +71,10 @@
     margin-left: 40px;
   }
 .Save-btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
     padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
@@ -73,10 +84,4 @@
     border-radius: 5px;
     cursor: pointer;
     overflow: hidden;
-}
-.del-img {
-    width: 15px;
-}
-.save-img {
-    width: 15px;
 }
