@@ -1,13 +1,15 @@
+import './styles/educationDisp.css'
+
 export default function DisplayEducation({educationInfo}) {
     return (
         <div className="Education-display">
-            <div>
-                <div>{educationInfo.startDate}-{educationInfo.endDate}</div>
-                <div>{educationInfo.location}</div>
+            <div className="Edu-one">
+                <div className="SE-date">{educationInfo.startDate} To {educationInfo.endDate}</div>
+                <div className='Location'>{educationInfo.location}</div>
             </div>
-            <div>
-                <div>{educationInfo.school}</div>
-                <div>{educationInfo.degree}</div>
+            <div className="Edu-two">
+                <div className='School'>{educationInfo.school}</div>
+                <div className='Degree'>{educationInfo.degree}</div>
             </div>
         </div>
     )

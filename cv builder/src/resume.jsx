@@ -8,7 +8,13 @@ function CreateResume({submitted, eduSubmitted, expSubmitted, personalInfo, educ
         <div className="Resume">
              <div className="Resume-items">
                 {submitted && <DisplayPersonal personalInfo={personalInfo}/>}
+                <div className="Seperator">
+                    Education
+                </div>
                 {eduSubmitted && <DisplayEducation educationInfo={educationInfo} />}
+                <div className="Seperator">
+                    Experience
+                </div>
                 {expSubmitted && <DisplayExperience experienceInfo={experienceInfo} />}
              </div>
         </div>

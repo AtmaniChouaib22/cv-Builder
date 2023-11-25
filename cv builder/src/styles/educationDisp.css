@@ -1,0 +1,26 @@
+.Education-display {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+.Edu-one {
+    
+}
+.Edu-two {
+    
+}
+.SE-date {
+
+}
+.Location {
+
+}
+.School {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.Degree {
+
+}

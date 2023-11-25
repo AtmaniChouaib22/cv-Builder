@@ -9,8 +9,8 @@ function CreateExperience({showExpBox, experienceInfo, handleExperienceChange, h
             <form className="Experience-input" id="experienceForm" onSubmit={handleExpSub}>
                 <CreateInput id="company" type="text" placeholder="ex: Meta, google..." label="Company Name" value={experienceInfo.company} onChange={handleExperienceChange} />
                 <CreateInput id="title" type="text" placeholder="ex: Project Manger" label="Job Title" value={experienceInfo.title} onChange={handleExperienceChange} />
-                <CreateInput id="startDate" type="text" placeholder="" label="Start Date" value={experienceInfo.startDate} onChange={handleExperienceChange} />
-                <CreateInput id="endDate" type="text" placeholder="" label="End Date" value={experienceInfo.endDate} onChange={handleExperienceChange} />
+                <CreateInput id="startDate" type="date" placeholder="" label="Start Date" value={experienceInfo.startDate} onChange={handleExperienceChange} />
+                <CreateInput id="endDate" type="date" placeholder="" label="End Date" value={experienceInfo.endDate} onChange={handleExperienceChange} />
                 <CreateInput id="location" type="text" placeholder="Location" label="Location" value={experienceInfo.location} onChange={handleExperienceChange} />
                 <CreateInput id="disc" type="text" placeholder="Discription" label="Discription" value={experienceInfo.disc} onChange={handleExperienceChange} />
                 <div className="Buttons">

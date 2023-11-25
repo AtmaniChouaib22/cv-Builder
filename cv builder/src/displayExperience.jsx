@@ -1,14 +1,15 @@
+import './styles/experienceDisp.css'
 export default function DisplayExperience({experienceInfo}) {
     return (
         <div className="Experience-display">
-            <div>
-                <div>{experienceInfo.startDate}-{experienceInfo.endDate}</div>
-                <div>{experienceInfo.location}</div>
+            <div className="Exp-one">
+                <div className="SE-Date">{experienceInfo.startDate} To {experienceInfo.endDate}</div>
+                <div className="Location">{experienceInfo.location}</div>
             </div>
-            <div>
-                <div>{experienceInfo.title}</div>
-                <div>{experienceInfo.company}</div>
-                <div>{experienceInfo.disc}</div>
+            <div className="Exp-two">
+                <div className="Title">{experienceInfo.title}</div>
+                <div className="Company">{experienceInfo.company}</div>
+                <div className="Disctiption">{experienceInfo.disc}</div>
             </div>
         </div>
     )

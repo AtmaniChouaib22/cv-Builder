@@ -1,12 +1,13 @@
-
+import './styles/personalDisp.css'
+import { MailIcon, PhoneIcon, LocationIcon } from './assets/icons';
 function DisplayPersonal({personalInfo}) {
     return (
         <div className="Personal-display">
-            <div>{personalInfo.fullName}</div>
+            <div className="Full-name">{personalInfo.fullName}</div>
             <div className="Contact-display">
-                <div>{personalInfo.email}</div>
-                <div>{personalInfo.location}</div>
-                <div>{personalInfo.phone}</div>
+                <div className="Email"><MailIcon stroke="#f8fafc" width="20" height="20" />{personalInfo.email}</div>
+                <div className="Location"><LocationIcon stroke="#f8fafc" width="20" height="20" />{personalInfo.location}</div>
+                <div className="Phone"><PhoneIcon stroke="#f8fafc" width="20" height="20" />{personalInfo.phone}</div>
             </div>
         </div>
     )
