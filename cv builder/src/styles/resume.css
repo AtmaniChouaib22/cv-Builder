@@ -1,0 +1,29 @@
+.Resume {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+}
+.Resume-Paper {
+    background-color: white;
+    height: 100vh;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(128, 128, 128, 0.5);
+}
+.Personal-Section {
+    padding: 20px;
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+h1 {
+    text-align: center;
+}
+.Contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    justify-items: center;
+    text-align: center;
+}

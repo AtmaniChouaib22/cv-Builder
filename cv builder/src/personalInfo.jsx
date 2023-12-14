@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
 
-function CreatePersonalInfo({handlePersonalArray}) {
+function CreatePersonalInfo({handlePersonalArray, displayPersOnclick}) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -45,15 +45,16 @@ function CreatePersonalInfo({handlePersonalArray}) {
     }
 
     return (
-        <div>
-            Personal information
-            <form onSubmit={handlePersSubmit}>
+        <div className="Personal" >
+            <div className="Box-Header" onClick={displayPersOnclick}>Personal information</div>
+            <form onSubmit={handlePersSubmit} className="Personal-Form">
                 <CreateInput id="firstName" type="text" label="First Name" placeholder="Ryan" value={firstName} handleInputChange={handlePersonalChange} />
                 <CreateInput id="lastName" type="text" label="Last Name" placeholder="Gosling" value={lastName} handleInputChange={handlePersonalChange}/>
                 <CreateInput id="email" type="email" label="Email" placeholder="Ryangosling@gmail.com"value={email} handleInputChange={handlePersonalChange}/>
                 <CreateInput id="phone" type="tel" label="Phone" placeholder="123-456-7890" value={phone} handleInputChange={handlePersonalChange}/>
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handlePersonalChange}/>
-                <button type="submit">submit</button>
+                <button type="submit" id="personalSubmitButton">Submit</button>
+                <button id="EditPersonalButton">Edit</button>
             </form>
         </div>
     )

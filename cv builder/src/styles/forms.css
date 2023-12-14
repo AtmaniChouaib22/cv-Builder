@@ -1,0 +1,59 @@
+.Forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.Input-field {
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.Input-field > label {
+    margin-bottom: 5px;
+}
+.Input-field > input{
+  padding: 8px;
+  margin-bottom: 10px; /* Adjust spacing between input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 100%;
+}
+.Box-Header {
+    text-align: center;
+    width: 100%;
+    color: blue;
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    background-color: #ecf0f1;
+}
+.Box-Header:hover {
+    background-color: #2980b9;
+    color: #ecf0f1;
+  }
+.Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Education {
+    width: 300px;
+}
+.Education-Form {
+    display: none;
+}
+.Personal {
+    width: 300px;
+    margin-top: 30px;
+}
+.Personal-Form {
+    display: none;
+}
+.open {
+    display: block;
+}

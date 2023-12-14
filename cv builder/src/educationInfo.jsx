@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
 
-function CreateEducation({handleEducationArray}) {
+function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick}) {
     const [school, setSchool] = useState("");
     const [degree, setDegree] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -44,16 +44,26 @@ function CreateEducation({handleEducationArray}) {
     }
 
     return (
-        <div>
-            Education
-            <form onSubmit={handleEduSubmit}>
+        <div className="Education">
+            <div className="Box-Header" onClick={displayEduOnclick}>Education</div>
+            <form onSubmit={handleEduSubmit} className="Education-Form">
                 <CreateInput id="school" type="text" label="School/university" placeholder="MIT" value={school} handleInputChange={handleEducationChange} />
                 <CreateInput id="degree" type="text" label="Degree" placeholder="Computer Science" value={degree} handleInputChange={handleEducationChange}/>
                 <CreateInput id="startDate" type="date" label="Starting Date" placeholder=""value={startDate} handleInputChange={handleEducationChange}/>
                 <CreateInput id="endDate" type="date" label="Ending Date" placeholder="" value={endDate} handleInputChange={handleEducationChange}/>
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handleEducationChange}/>
-                <button type="submit">submit</button>
+                <div className="Buttons">
+                    <button type="submit">submit</button>
+                    <button>New Education</button>
+                    <button>Edit</button>
+                </div>
             </form>
+
+            <div>
+                {educationInfoArr.map(item => (<div className="Info-Box">
+                    <div>{item.degree}</div>
+                </div>))}
+            </div>
         </div>
     )
 }

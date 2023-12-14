@@ -1,7 +1,14 @@
 import { useState } from "react"
 import CreatePersonalInfo from "./personalInfo"
 import CreateEducation from "./educationInfo";
-import DisplayEducation from "./displayEducations";
+import CreateResume from "./resume";
+import "./styles/app.css"
+import "./styles/forms.css"
+import { v4 as uuidv4 } from 'uuid';
+
+const uniqueKey = uuidv4();
+
+console.log(uniqueKey);
 
 export default function App() {
     const [personalInfoArr, setPersonalInfoArr] = useState([]);
@@ -15,6 +22,7 @@ export default function App() {
             email: email,
             phone: phone,
             location: location,
+            key: uuidv4()
         };
 
         console.log('working');
@@ -31,6 +39,7 @@ export default function App() {
             startDate: startDate,
             endDate: endDate,
             location: location,
+            key: uuidv4()
         };
 
         console.log('working');
@@ -38,11 +47,26 @@ export default function App() {
         setEducationInfoArr([...educationInfoArr, obj]);
         console.log(educationInfoArr)
     }
+
+    // display onclick the forms
+    function displayPersOnclick() {
+        const btn = document.querySelector(".Personal-Form");
+        btn.classList.toggle("open");
+    }
+    function displayEduOnclick() {
+        const btn = document.querySelector(".Education-Form");
+        btn.classList.toggle("open");
+    }
+
     return(
-        <>
-            <CreatePersonalInfo handlePersonalArray={handlePersonalInfoArr} />
-            <CreateEducation handleEducationArray={handleEducationArray} />
-            <DisplayEducation educationInfoArr={educationInfoArr} />
-        </>
+        <div className="App-interface">
+            <div className="Forms">
+                <CreatePersonalInfo handlePersonalArray={handlePersonalInfoArr} displayPersOnclick={displayPersOnclick}/>
+                <CreateEducation handleEducationArray={handleEducationArray} educationInfoArr={educationInfoArr} displayEduOnclick={displayEduOnclick}/>
+            </div>
+            <div className="Resume">
+                <CreateResume educationInfoArr={educationInfoArr} personalInfoArr={personalInfoArr}/>
+            </div>
+        </div>
     )
 }

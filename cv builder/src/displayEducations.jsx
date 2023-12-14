@@ -2,8 +2,19 @@
 function DisplayEducation({educationInfoArr}) {
     console.log(educationInfoArr);
     return (
-        <div className="hello">
-            {educationInfoArr.map(item => (<div>{item.school}{item.degree}</div>))}
+        <div className="Education-Section">
+            {educationInfoArr.map(item => (<div key={item.key}>
+                {console.log(item.key)}
+                <div className="left-info">
+                    <div>{item.startDate} To </div>
+                    <div>{item.endDate}</div>
+                    <div>{item.location}</div>
+                </div>
+                <div className="right-info">
+                    <div>{item.degree}</div>
+                    <div>{item.school}</div>
+                </div>
+            </div>))}
         </div>
     )
 }
