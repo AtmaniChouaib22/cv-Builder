@@ -10,6 +10,17 @@ body {
 
 .App-interface {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 500px 1fr;
     height: 100%;
+}
+.Short-Cuts {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.Info-Box {
+    background-color: #ecf0f1;
+    padding: 10px;
+    cursor: pointer;
 }

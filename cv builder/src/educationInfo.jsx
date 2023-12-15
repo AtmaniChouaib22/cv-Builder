@@ -59,7 +59,7 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
                 </div>
             </form>
 
-            <div>
+            <div className="Short-Cuts">
                 {educationInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.degree}</div>
                 </div>))}

@@ -6,9 +6,9 @@ export default function CreateResume({educationInfoArr, personalInfoArr}) {
     return (
         <div className="Resume-Paper">
             <DisplayPersonal personalInfoArr={personalInfoArr} />
-            <div>Education</div>
+            <div className="Divider">Education</div>
             <DisplayEducation educationInfoArr={educationInfoArr}/>
-            <div>Experience</div>
+            <div className="Divider">Experience</div>
         </div>
     )
 }
