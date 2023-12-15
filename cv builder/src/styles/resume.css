@@ -3,6 +3,7 @@
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
+    height: 800px;
 }
 .Resume-Paper {
     display: flex;
@@ -25,6 +26,8 @@
 }
 .Personal-Section {
     padding: 20px;
+    background-color: #475569;
+    width: 100%;
 }
 .Personal-Item {
     display: grid;

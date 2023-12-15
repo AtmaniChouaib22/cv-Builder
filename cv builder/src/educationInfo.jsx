@@ -54,8 +54,6 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handleEducationChange}/>
                 <div className="Buttons">
                     <button type="submit">submit</button>
-                    <button>New Education</button>
-                    <button>Edit</button>
                 </div>
             </form>
 
