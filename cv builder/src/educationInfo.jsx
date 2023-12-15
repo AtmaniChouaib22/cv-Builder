@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
 
-function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick}) {
+function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick, edit}) {
     const [school, setSchool] = useState("");
     const [degree, setDegree] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -43,6 +43,21 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
         setLocation("");
     } 
 
+    function edit() {
+        const schoolInp = document.querySelector("#school")
+        const degreeInp = document.querySelector("#degree")
+        const sdateInp = document.querySelector("#startDate")
+        const edateInp = document.querySelector("#endDate")
+        const locationInp = document.querySelector("#location")
+        
+        schoolInp.value= educationInfoArr[0]["school"] ;
+        degreeInp.value= educationInfoArr[0]["degree"] ;
+        sdateInp.value= educationInfoArr[0]["startDate"] ;
+        edateInp.value= educationInfoArr[0]["endDate"] ;
+        locationInp.value= educationInfoArr[0]["location"] ;
+
+    }
+
     return (
         <div className="Education">
             <div className="Box-Header" onClick={displayEduOnclick}>Education</div>
@@ -60,7 +75,7 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
             <div className="Short-Cuts">
                 {educationInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.degree}</div>
-                    <button>Edit</button>
+                    <button onClick={edit}>Edit</button>
                     <button>Delete</button>
                 </div>))}
             </div>
