@@ -26,7 +26,7 @@ function CreateExperience({handleExperienceArray, experienceInfoArr, displayExpO
             case "location": 
                 setLocation(value);
                 break;
-            case "disctiption": 
+            case "discription": 
                 setDiscription(value);
                 break;
         }
@@ -56,8 +56,8 @@ function CreateExperience({handleExperienceArray, experienceInfoArr, displayExpO
                 <CreateInput id="title" type="text" label="job Title" placeholder="Job Title" value={title} handleInputChange={handleExperienceChange}/>
                 <CreateInput id="startDate" type="date" label="Starting Date" placeholder=""value={startDate} handleInputChange={handleExperienceChange}/>
                 <CreateInput id="endDate" type="date" label="Ending Date" placeholder="" value={endDate} handleInputChange={handleExperienceChange}/>
-                <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handleExperienceChange}/>
-                <CreateInput id="discription" type="text" label="Discription" placeholder="Discription"value={discription} handleInputChange={handleExperienceChange}/>
+                <CreateInput id="location" type="text" label="Location" placeholder="City, Country" value={location} handleInputChange={handleExperienceChange}/>
+                <CreateInput id="discription" type="text" label="Discription" placeholder="Discription" value={discription} handleInputChange={handleExperienceChange}/>
                 <div className="Buttons">
                     <button type="submit" className="Submit-Btn">Submit</button>
                 </div>

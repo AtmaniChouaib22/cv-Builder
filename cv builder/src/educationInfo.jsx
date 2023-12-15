@@ -41,7 +41,7 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
         setStartDate("");
         setEndDate("");
         setLocation("");
-    }
+    } 
 
     return (
         <div className="Education">
@@ -60,6 +60,8 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
             <div className="Short-Cuts">
                 {educationInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.degree}</div>
+                    <button>Edit</button>
+                    <button>Delete</button>
                 </div>))}
             </div>
         </div>

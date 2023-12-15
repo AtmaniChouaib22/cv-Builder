@@ -92,7 +92,7 @@ export default function App() {
                 <CreateExperience handleExperienceArray={handleExperienceArray} experienceInfoArr={experienceInfoArr} displayExpOnclick={displayExpOnclick}/>
             </div>
             <div className="Resume">
-                <CreateResume educationInfoArr={educationInfoArr} personalInfoArr={personalInfoArr}/>
+                <CreateResume educationInfoArr={educationInfoArr} personalInfoArr={personalInfoArr} experienceInfoArr={experienceInfoArr}/>
             </div>
         </div>
     )

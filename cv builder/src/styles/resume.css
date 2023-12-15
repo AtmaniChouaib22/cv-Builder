@@ -23,11 +23,14 @@
     padding: 10px;
     border-radius: 5px;
     background-color: #ecf0f1;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
 .Personal-Section {
     padding: 20px;
     background-color: #475569;
     width: 100%;
+    color: #ecf0f1;
 }
 .Personal-Item {
     display: grid;
@@ -42,6 +45,7 @@ h1 {
     gap: 10px;
     justify-items: center;
     text-align: center;
+    font-size: 1.2rem;
 }
 .Education-Section {
     display: grid;
@@ -58,13 +62,40 @@ h1 {
     border-left: 2px solid black;
     
 }
-.left-one {
+.Experience-Section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.Experience-Item {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 20px;
+    border-left: 2px solid black;
+}
+.left-info {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
-.right-one {
+.right-info {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Title {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+.Location {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+.Degree {
+    font-size: 1.1rem;
+    font-weight: 800;
 }

@@ -7,10 +7,10 @@ function DisplayEducation({educationInfoArr}) {
                 <div className="left-info">
                     <div>{item.startDate} To </div>
                     <div>{item.endDate}</div>
-                    <div>{item.location}</div>
+                    <div className="Location">{item.location}</div>
                 </div>
                 <div className="right-info">
-                    <div>{item.degree}</div>
+                    <div className="Degree">{item.degree}</div>
                     <div>{item.school}</div>
                 </div>
             </div>))}
