@@ -3,7 +3,6 @@ import CreatePersonalInfo from "./personalInfo"
 import CreateEducation from "./educationInfo";
 import CreateResume from "./resume";
 import CreateExperience from "./experienceInfo";
-import Navbar from "./navbar";
 import "./styles/app.css"
 import "./styles/forms.css"
 import { v4 as uuidv4 } from 'uuid';
@@ -27,11 +26,7 @@ export default function App() {
             location: location,
             key: uuidv4()
         };
-
-        console.log('working');
-        console.log(obj);
         setPersonalInfoArr([...personalInfoArr, obj]);
-        console.log(personalInfoArr)
     }
     
     function handleEducationArray(school, degree, startDate, endDate, location, e) {
@@ -44,11 +39,7 @@ export default function App() {
             location: location,
             key: uuidv4()
         };
-
-        console.log('working');
-        console.log(obj);
         setEducationInfoArr([...educationInfoArr, obj]);
-        console.log(educationInfoArr)
     }
 
     function handleExperienceArray(company, title, startDate, endDate, location, discription, e) {
@@ -62,11 +53,7 @@ export default function App() {
             discription: discription,
             key: uuidv4()
         };
-
-        console.log('working');
-        console.log(obj);
         setExperienceInfoArr([...experienceInfoArr, obj]);
-        console.log(experienceInfoArr)
     }
 
     // display onclick the forms
@@ -83,13 +70,25 @@ export default function App() {
         btn.classList.toggle("open");
         console.log("www")
     }
+    //delete 
+    const handleDelete = (key) => {
+        const newEducations = educationInfoArr.filter(item => item.key !== key)
+        setEducationInfoArr(newEducations)
+    }
+    const handleExpDelete = (key) => {
+        const newExperiences = experienceInfoArr.filter(item => item.key !== key)
+        setExperienceInfoArr(newExperiences);
+    }
+    const handlePersDelete = () => {
+        setPersonalInfoArr([]);
+    }
     
     return(
         <div className="App-interface">
             <div className="Forms">
-                <CreatePersonalInfo handlePersonalArray={handlePersonalInfoArr} displayPersOnclick={displayPersOnclick}/>
-                <CreateEducation handleEducationArray={handleEducationArray} educationInfoArr={educationInfoArr} displayEduOnclick={displayEduOnclick}/>
-                <CreateExperience handleExperienceArray={handleExperienceArray} experienceInfoArr={experienceInfoArr} displayExpOnclick={displayExpOnclick}/>
+                <CreatePersonalInfo handlePersonalArray={handlePersonalInfoArr} displayPersOnclick={displayPersOnclick} handlePersDelete={handlePersDelete}/>
+                <CreateEducation handleDelete={handleDelete} handleEducationArray={handleEducationArray} educationInfoArr={educationInfoArr} displayEduOnclick={displayEduOnclick}/>
+                <CreateExperience handleExperienceArray={handleExperienceArray} experienceInfoArr={experienceInfoArr} displayExpOnclick={displayExpOnclick} handleExpDelete={handleExpDelete}/>
             </div>
             <div className="Resume">
                 <CreateResume educationInfoArr={educationInfoArr} personalInfoArr={personalInfoArr} experienceInfoArr={experienceInfoArr}/>

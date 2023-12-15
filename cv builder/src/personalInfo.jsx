@@ -1,7 +1,8 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
+import { SaveIcon, DeleteIcon } from "./assets/icons";
 
-function CreatePersonalInfo({handlePersonalArray, displayPersOnclick}) {
+function CreatePersonalInfo({handlePersonalArray, displayPersOnclick, handlePersDelete}) {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -53,8 +54,10 @@ function CreatePersonalInfo({handlePersonalArray, displayPersOnclick}) {
                 <CreateInput id="email" type="email" label="Email" placeholder="Ryangosling@gmail.com"value={email} handleInputChange={handlePersonalChange}/>
                 <CreateInput id="phone" type="tel" label="Phone" placeholder="123-456-7890" value={phone} handleInputChange={handlePersonalChange}/>
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handlePersonalChange}/>
-                <button type="submit" id="personalSubmitButton">Submit</button>
-                <button id="EditPersonalButton">Edit</button>
+                <div className="btns">
+                <button type="submit" className="Submit-btn"><SaveIcon stroke={"white"} width={16} height={16}/>Submit</button>
+                <button onClick={handlePersDelete} className="Delete-btn"><DeleteIcon stroke={"white"} width={16} height={16}/>Delete</button>
+                </div>
             </form>
         </div>
     )

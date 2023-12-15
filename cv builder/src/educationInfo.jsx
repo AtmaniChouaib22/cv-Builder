@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
 
-function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick, edit}) {
+function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick, handleDelete}) {
     const [school, setSchool] = useState("");
     const [degree, setDegree] = useState("");
     const [startDate, setStartDate] = useState("");
@@ -27,14 +27,11 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
                 break;
         }
     };
-
     const handleEduSubmit = (e) => {
         e.preventDefault();
         handleEducationArray(school, degree, startDate, endDate, location, e);
         clearInputs() ;
-        
     };
-
     function clearInputs () {
         setDegree("");
         setSchool("");
@@ -42,22 +39,6 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
         setEndDate("");
         setLocation("");
     } 
-
-    function edit() {
-        const schoolInp = document.querySelector("#school")
-        const degreeInp = document.querySelector("#degree")
-        const sdateInp = document.querySelector("#startDate")
-        const edateInp = document.querySelector("#endDate")
-        const locationInp = document.querySelector("#location")
-        
-        schoolInp.value= educationInfoArr[0]["school"] ;
-        degreeInp.value= educationInfoArr[0]["degree"] ;
-        sdateInp.value= educationInfoArr[0]["startDate"] ;
-        edateInp.value= educationInfoArr[0]["endDate"] ;
-        locationInp.value= educationInfoArr[0]["location"] ;
-
-    }
-
     return (
         <div className="Education">
             <div className="Box-Header" onClick={displayEduOnclick}>Education</div>
@@ -68,15 +49,14 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
                 <CreateInput id="endDate" type="date" label="Ending Date" placeholder="" value={endDate} handleInputChange={handleEducationChange}/>
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country"value={location} handleInputChange={handleEducationChange}/>
                 <div className="Buttons">
-                    <button type="submit">submit</button>
+                    <button type="submit" className="Submit-btn"><SaveIcon stroke={"white"} width={16} height={16}/>Submit</button>
                 </div>
             </form>
 
             <div className="Short-Cuts">
                 {educationInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.degree}</div>
-                    <button onClick={edit}>Edit</button>
-                    <button>Delete</button>
+                    <button onClick={() => handleDelete(item.key)}><DeleteIcon stroke={"white"} width={10} height={10}/>Delete</button>
                 </div>))}
             </div>
         </div>

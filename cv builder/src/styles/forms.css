@@ -62,3 +62,42 @@
 .open {
     display: block;
 }
+.Submit-btn {
+  padding: 10px;  
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+.Submit-btn:hover {
+    background-color: #2980b9;
+  }
+.Delete-btn {
+    border: none;
+    padding: 10px;  
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fd4949;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.Delete-btn:hover {
+    background-color: #950303;
+  }
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
