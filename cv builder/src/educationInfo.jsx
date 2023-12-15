@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
+import { SaveIcon, DeleteIcon } from "./assets/icons";
 
 function CreateEducation({handleEducationArray, educationInfoArr, displayEduOnclick, handleDelete}) {
     const [school, setSchool] = useState("");
@@ -56,7 +57,7 @@ function CreateEducation({handleEducationArray, educationInfoArr, displayEduOncl
             <div className="Short-Cuts">
                 {educationInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.degree}</div>
-                    <button onClick={() => handleDelete(item.key)}><DeleteIcon stroke={"white"} width={10} height={10}/>Delete</button>
+                    <button className="SmallDeleteIcon" onClick={() => handleDelete(item.key)}><DeleteIcon stroke={"white"} width={10} height={10}/>Delete</button>
                 </div>))}
             </div>
         </div>

@@ -6,6 +6,7 @@ import CreateExperience from "./experienceInfo";
 import "./styles/app.css"
 import "./styles/forms.css"
 import { v4 as uuidv4 } from 'uuid';
+import { Github } from "./assets/icons";
 
 const uniqueKey = uuidv4();
 
@@ -86,6 +87,7 @@ export default function App() {
     return(
         <div className="App-interface">
             <div className="Forms">
+                <div className="GitHub"><Github /><a target="_blank" href="https://github.com/AtmaniChouaib22?tab=overview&from=2023-12-01&to=2023-12-15">Atmani Chouaib</a></div>
                 <CreatePersonalInfo handlePersonalArray={handlePersonalInfoArr} displayPersOnclick={displayPersOnclick} handlePersDelete={handlePersDelete}/>
                 <CreateEducation handleDelete={handleDelete} handleEducationArray={handleEducationArray} educationInfoArr={educationInfoArr} displayEduOnclick={displayEduOnclick}/>
                 <CreateExperience handleExperienceArray={handleExperienceArray} experienceInfoArr={experienceInfoArr} displayExpOnclick={displayExpOnclick} handleExpDelete={handleExpDelete}/>

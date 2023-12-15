@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CreateInput from "./inputField";
+import { SaveIcon, DeleteIcon } from "./assets/icons";
 
 function CreateExperience({handleExperienceArray, experienceInfoArr, displayExpOnclick, handleExpDelete}) {
     const [company, setCompany] = useState("");
@@ -59,14 +60,14 @@ function CreateExperience({handleExperienceArray, experienceInfoArr, displayExpO
                 <CreateInput id="location" type="text" label="Location" placeholder="City, Country" value={location} handleInputChange={handleExperienceChange}/>
                 <CreateInput id="discription" type="text" label="Discription" placeholder="Discription" value={discription} handleInputChange={handleExperienceChange}/>
                 <div className="Buttons">
-                    <button type="submit" className="Submit-Btn"><SaveIcon stroke={"white"} width={16} height={16}/>Submit</button>
+                    <button type="submit" className="Submit-btn"><SaveIcon stroke={"white"} width={16} height={16}/>Submit</button>
                 </div>
             </form>
 
             <div className="Short-Cuts">
                 {experienceInfoArr.map(item => (<div className="Info-Box">
                     <div>{item.title}</div>
-                    <button onClick={() => handleExpDelete(item.key)}>Delete</button>
+                    <button className="SmallDeleteIcon" onClick={() => handleExpDelete(item.key)}><DeleteIcon stroke={"white"} width={16} height={16}/>Delete</button>
                 </div>))}
             </div>
         </div>
