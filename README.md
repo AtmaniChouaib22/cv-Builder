@@ -1,4 +1,4 @@
-<h1>the odin project: CV-Builder Project</h1>
+<h1>CV-Builder Project</h1>
 <p>built using React.js with vite, Tailwind.css , Eslint and prettier config</p>
 
 <h4>this project covers: </h4>
